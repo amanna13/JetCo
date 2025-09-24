@@ -4,7 +4,7 @@ Welcome to the **JetCo** library documentation! JetCo is your ultimate **Open-So
 
 View the full Documentation of <a href="https://jetco.developerstring.com" target="_blank" rel="noopener noreferrer">JetCo Docs</a>
 
-<a href="https://github.com/DeveloperChunk/JetCo" target="_blank" rel="noopener noreferrer">![GitHub release (latest by date)](https://img.shields.io/github/v/release/developerchunk/jetco?label=GitHub)</a> <a href="https://search.maven.org/artifact/com.developerstring.jetco/ui/" target="_blank" rel="noopener noreferrer">![Maven Central](https://img.shields.io/maven-central/v/com.developerstring.jetco/ui.svg?label=Maven%20Central)</a>
+<a href="https://github.com/DeveloperChunk/JetCo" target="_blank" rel="noopener noreferrer">![GitHub release (latest by date)](https://img.shields.io/github/v/release/developerchunk/jetco?label=GitHub)</a> <a href="https://search.maven.org/artifact/com.developerstring.jetco/ui/" target="_blank" rel="noopener noreferrer">![Maven Central](https://central.sonatype.com/artifact/com.developerstring.jetco/ui)</a>
 
 ---
 
