@@ -1,5 +1,6 @@
 package com.developerstring.jetco.ui.charts.piechart.config
 
+import androidx.annotation.Keep
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -19,6 +20,7 @@ import androidx.compose.ui.unit.Dp
  * items to fit within the available space.
  * @param textStyle [TextStyle] to be applied to any text elements within the pie chart, such as slice labels.
  */
+@Keep
 @Stable
 data class PieChartConfig(
     val radius: Dp,
@@ -38,6 +40,7 @@ data class PieChartConfig(
  * @param animationDuration Duration of the animation in milliseconds, determining how long the animation takes to complete.
  * @param animationRotations Number of rotations the pie chart performs during the animation.
  */
+@Keep
 @Stable
 data class PieChartAnimationConfig(
     val enableAnimation: Boolean,

@@ -1,5 +1,6 @@
 package com.developerstring.jetco.ui.charts.barchart.config
 
+import androidx.annotation.Keep
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -15,6 +16,7 @@ import androidx.compose.ui.unit.Dp
  * @property width The width of the bar.
  * @property shape The shape of the bar (e.g., rounded corners).
  */
+@Keep
 @Stable
 data class BarChartConfig(
     val color: Color,
@@ -33,6 +35,7 @@ data class BarChartConfig(
  * @property gapBetweenBar The gap between individual bars within a group.
  * @property gapBetweenGroup The gap between different groups of bars.
  */
+@Keep
 @Stable
 data class GroupBarChartConfig(
     val colors: List<Color>,
@@ -53,6 +56,7 @@ data class GroupBarChartConfig(
 * @property axisLineColor The color of the axis line.
 * @property textStyle The [TextStyle] of the text for axis labels.
 */
+@Keep
 @Stable
 data class XAxisConfig(
     val isAxisScaleEnabled: Boolean,
@@ -76,6 +80,7 @@ data class XAxisConfig(
  * @property textPrefix The prefix to be added before the scale value.
  * @property textPostfix The postfix to be added after the scale value.
  */
+@Keep
 @Stable
 data class YAxisConfig(
     val isAxisScaleEnabled: Boolean,
@@ -100,6 +105,7 @@ data class YAxisConfig(
  * @property dashCap The style of the stroke cap used for dashed lines.
  *
  */
+@Keep
 @Stable
 data class GridLineStyle(
     val color: Color,
@@ -119,6 +125,7 @@ data class GridLineStyle(
  * @property shape The shape of the pop-ups (e.g., rounded corners).
  * @property textStyle The [TextStyle] of the text in the pop-ups.
  */
+@Keep
 @Stable
 data class PopUpConfig(
     val enableXAxisPopUp: Boolean,

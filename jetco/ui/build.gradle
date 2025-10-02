@@ -61,8 +61,8 @@ afterEvaluate {
         pom {
 
             name = "JetCo"
-            description = "A versatile Jetpack Compose library for modern Android development."
-            inceptionYear = "2024"
+            description = "A versatile Jetpack Compose library for building modern UI for your Android Apps."
+            inceptionYear = "2025"
             url = "https://github.com/developerchunk/jetco/"
             licenses {
                 license {

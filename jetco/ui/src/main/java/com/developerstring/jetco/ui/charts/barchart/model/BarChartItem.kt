@@ -1,5 +1,6 @@
 package com.developerstring.jetco.ui.charts.barchart.model
 
+import androidx.annotation.Keep
 import androidx.compose.runtime.Stable
 
 /**
@@ -11,6 +12,7 @@ import androidx.compose.runtime.Stable
  *                      This value is computed as a fraction of the maximum value among all bars,
  *                      facilitating proportional rendering of the bars in the chart.
  */
+@Keep
 @Stable
 data class BarChartItem(
     val name: String,

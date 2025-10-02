@@ -16,8 +16,8 @@
 
 //ext.library = new LinkedHashMap<String, Object>()
 //library.groupId = "com.developerstring.jetco"
-//library.version_name = "1.0.0-beta.1"
-//library.compileSdk = 34
+//library.version_name = "1.0.0-beta.2"
+//library.compileSdk = 36
 //library.target_sdk = 34
 //library.min_sdk = 21
 
@@ -25,9 +25,9 @@ ext {
 
     library = [
             groupId        : "com.developerstring.jetco",
-            version_name   : "1.0.0-beta.1",
-            version_code   : 1,
-            target_sdk     : 34,
+            version_name   : "1.0.0-beta.4",
+            version_code   : 4,
+            target_sdk     : 36,
             min_sdk        : 21,
             compose_min_sdk: 21,
     ]

@@ -1,0 +1,137 @@
+package com.developerstring.jetco.ui.components.stepper
+
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.unit.dp
+import com.developerstring.jetco.ui.components.stepper.model.StepperActionIcons
+import com.developerstring.jetco.ui.components.stepper.model.StepperConfig
+import com.developerstring.jetco.ui.components.stepper.model.StepperNode
+
+// Compact Horizontal Stepper (for mobile screens)
+@Composable
+fun CompactHorizontalStepper(
+    steps: List<StepperNode>,
+    currentStep: Int,
+    modifier: Modifier = Modifier,
+    style: StepperConfig = StepperConfig(),
+    stepperActionIcons: StepperActionIcons = StepperActionIcons(),
+    onStepClick: ((Int) -> Unit)? = null
+) {
+
+    var animationTriggered by rememberSaveable {
+        mutableStateOf(!style.animation.enabled)
+    }
+
+    val animatedProgress by animateFloatAsState(
+        targetValue = if (animationTriggered) 1f else 0f,
+        animationSpec = tween(style.animation.durationMillis),
+        label = "node_animation"
+    )
+
+    LaunchedEffect(Unit) {
+        // Trigger animation on composition
+        animationTriggered = true
+    }
+
+
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        steps.forEachIndexed { index, step ->
+            val isActive = index == currentStep - 1
+            val isCompleted = index < currentStep-1
+
+            val nodeColor = when {
+                isCompleted -> style.node.completedColor
+                isActive -> style.node.activeColor
+                else -> style.node.inactiveColor
+            }
+
+            // Node
+            Card(
+                modifier = Modifier
+                    .size(24.dp)
+                    .clip(CircleShape),
+                colors = CardDefaults.cardColors(containerColor = nodeColor),
+                onClick = { onStepClick?.invoke(index) }
+            ) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    if (isCompleted || index == currentStep-1) {
+                        Icon(
+                            imageVector = stepperActionIcons.completed,
+                            contentDescription = "Completed",
+                            tint = style.node.actionIconColor,
+                            modifier = Modifier.size(12.dp)
+                        )
+                    } else {
+                        if (step.icon!= null) {
+                            Icon(
+                                imageVector = step.icon,
+                                contentDescription = "Completed",
+                                tint = style.node.idleIconColor,
+                                modifier = Modifier.size(12.dp)
+                            )
+                        } else {
+                            Icon(
+                                imageVector = stepperActionIcons.active,
+                                contentDescription = "Completed",
+                                tint = style.node.idleIconColor,
+                                modifier = Modifier.size(12.dp)
+                            )
+                        }
+                    }
+                }
+            }
+
+            // Connector
+            if (index < steps.lastIndex) {
+                Canvas(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(2.dp)
+                        .padding(horizontal = 8.dp)
+                ) {
+                    val pathEffect = if (!isCompleted) style.connector.pathEffect else null
+                    val strokeColor = if (isCompleted) style.node.completedColor else style.node.inactiveColor
+                    drawLine(
+                        color = strokeColor,
+                        start = Offset(0f, size.height / 2),
+                        end = Offset(size.width * animatedProgress, size.height / 2),
+                        strokeWidth = 2.dp.toPx(),
+                        cap = StrokeCap.Round,
+                        pathEffect = pathEffect
+                    )
+                }
+            }
+        }
+    }
+}

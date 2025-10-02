@@ -1,5 +1,6 @@
 package com.developerstring.jetco.ui.charts.barchart.model
 
+import androidx.annotation.Keep
 import androidx.compose.runtime.Stable
 
 /**
@@ -9,6 +10,7 @@ import androidx.compose.runtime.Stable
  * @property barValues A list of [BarValue] objects representing the individual bars within this group.
  *                     Each [BarValue] contains the raw value and its normalized float value.
  */
+@Keep
 @Stable
 data class GroupBarChartItem(
     val name: String,
@@ -24,6 +26,8 @@ data class GroupBarChartItem(
  *                      This value is computed as a fraction of the maximum value among all bars
  *                      in the group, facilitating proportional rendering of the bars.
  */
+@Keep
+@Stable
 data class BarValue(
     val value: Float,
     val floatValue: Float

@@ -41,11 +41,17 @@ fun XAxisLabel(
         )
     }
 
+    val textToLengthRatio = if (
+        itemName.length <= 4
+    ) 1.5f else if (itemName.length <= 8) 1.7f else 2f
+
     if (enableTextRotate) {
         // Box used to contain the label text with rotation applied if rotation is enabled
         Box(
             modifier = Modifier
-                .size(itemName.length.dp * (xAxisTextStyle.fontSize.value / 2f))
+                .size(
+                    itemName.length.dp * textToLengthRatio
+                )
                 .rotate(textRotateAngle)
         ) {
             xAxisScaleTextUI()

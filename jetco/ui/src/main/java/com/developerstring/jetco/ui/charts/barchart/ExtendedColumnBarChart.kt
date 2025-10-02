@@ -94,7 +94,7 @@ fun ExtendedColumnBarChart(
     enterAnimation: EnterTransition = BarChartDefaults.enterTransitionVertically,
     exitAnimation: ExitTransition = shrinkVertically(),
     maxTextLengthXAxis: Int = 6,
-    enableTextRotate: Boolean = true,
+    enableTextRotate: Boolean = false,
     textRotateAngle: Float = -60f,
     enableGridLines: Boolean = true,
     scrollEnable: Boolean = true,
