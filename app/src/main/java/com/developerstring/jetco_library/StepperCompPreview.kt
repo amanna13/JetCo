@@ -114,7 +114,7 @@ fun StepperPreview() {
 
         Column(
             modifier = Modifier
-                .padding(top = 50.dp, bottom = 40.dp)
+                .padding(top = 50.dp, bottom = 60.dp)
                 .fillMaxSize()
                 .padding(16.dp)
         ) {

@@ -36,7 +36,45 @@ import com.developerstring.jetco.ui.components.stepper.model.StepperConfig
 import com.developerstring.jetco.ui.components.stepper.model.StepperNode
 import com.developerstring.jetco.ui.components.stepper.model.StepperStatus
 
-// Horizontal Stepper Component
+/**
+ * A customizable horizontal stepper component built with Jetpack Compose.
+ *
+ * The [HorizontalStepper] arranges a list of steps horizontally, connected with lines between them.
+ * Each step is represented by a node and an optional title/label below it.
+ *
+ * ### Features
+ * - Supports **progress animations** for node connectors.
+ * - Allows **custom icons** for Active, Completed, and Error states via [StepperActionIcons].
+ * - **Customizable styling** via [StepperConfig] (colors, shape, spacing, typography, path effects, etc.).
+ * - Steps are **interactive** with [onStepClick] callback support.
+ * - Labels can be shown or hidden using [showLabels].
+ * - Supports scrolling if the number of steps exceeds available width via [scrollEnable].
+ *
+ * ### Example Usage
+ * ```kotlin
+ * val steps = listOf(
+ *     StepperNode("Cart", status = StepperStatus.COMPLETE),
+ *     StepperNode("Delivery", status = StepperStatus.ACTIVE),
+ *     StepperNode("Payment", status = StepperStatus.IDLE),
+ *     StepperNode("Confirmation", status = StepperStatus.IDLE),
+ * )
+ *
+ * HorizontalStepper(
+ *     steps = steps,
+ *     showLabels = true,
+ *     style = StepperConfig(),
+ *     onStepClick = { index -> println("Step $index clicked") }
+ * )
+ * ```
+ *
+ * @param steps List of [StepperNode] representing the steps in the horizontal flow.
+ * @param modifier Modifier to be applied to the stepper layout.
+ * @param style Customization options for the stepper look & feel via [StepperConfig].
+ * @param stepperActionIcons Icons to display for different step states (active, completed, error).
+ * @param showLabels Whether to display the step titles/labels below each node.
+ * @param scrollEnable Whether the stepper should allow horizontal scrolling if content exceeds width.
+ * @param onStepClick Callback invoked with the step index when a step is clicked. Can be `null` if not needed.
+ */
 @Composable
 fun HorizontalStepper(
     steps: List<StepperNode>,

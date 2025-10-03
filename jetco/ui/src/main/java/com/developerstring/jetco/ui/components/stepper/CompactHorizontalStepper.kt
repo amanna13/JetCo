@@ -30,7 +30,43 @@ import com.developerstring.jetco.ui.components.stepper.model.StepperActionIcons
 import com.developerstring.jetco.ui.components.stepper.model.StepperConfig
 import com.developerstring.jetco.ui.components.stepper.model.StepperNode
 
-// Compact Horizontal Stepper (for mobile screens)
+/**
+ * A compact horizontal stepper component for Jetpack Compose.
+ *
+ * The [CompactHorizontalStepper] arranges steps horizontally in a more space-efficient layout
+ * compared to [HorizontalStepper]. It is designed for cases where screen width is limited,
+ * or when you want a cleaner, minimal representation of step progress.
+ *
+ * ### Features
+ * - Displays step nodes with optional icons based on [StepperActionIcons].
+ * - Provides a **compact layout** with smaller labels and reduced spacing.
+ * - Supports **custom styling** with [StepperConfig] (colors, spacing, shapes, typography).
+ * - Allows **step interactions** through [onStepClick] callback.
+ *
+ * ### Example Usage
+ * ```kotlin
+ * val steps = listOf(
+ *     StepperNode("Login", status = StepperStatus.COMPLETE),
+ *     StepperNode("Details", status = StepperStatus.ACTIVE),
+ *     StepperNode("Summary", status = StepperStatus.IDLE),
+ *     StepperNode("Finish", status = StepperStatus.IDLE),
+ * )
+ *
+ * CompactHorizontalStepper(
+ *     steps = steps,
+ *     currentStep = 2,
+ *     style = StepperConfig(),
+ *     onStepClick = { index -> println("Step $index clicked") }
+ * )
+ * ```
+ *
+ * @param steps List of [StepperNode] representing the steps in the compact horizontal flow.
+ * @param currentStep The index of the current active step (0-based).
+ * @param modifier Modifier to be applied to the stepper layout.
+ * @param style Styling options for customizing the stepper’s appearance via [StepperConfig].
+ * @param stepperActionIcons Icons for step states like active, completed, and error.
+ * @param onStepClick Optional callback invoked with the index when a step is clicked.
+ */
 @Composable
 fun CompactHorizontalStepper(
     steps: List<StepperNode>,

@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
  * @param dividerEffect PathEffect for the dashed divider.
  * @param dividerStrokeWidth Width of the dashed divider line.
  * @param dividerColor Color of the dashed divider line.
+ * @param notchWeight Vertical position of the notches as a fraction of card height (0f to 1f).
  * @param content Card body composable content. Use [TicketContent] to split the card into sections.
  */
 @Composable

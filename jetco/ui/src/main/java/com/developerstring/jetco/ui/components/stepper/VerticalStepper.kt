@@ -1,7 +1,6 @@
 package com.developerstring.jetco.ui.components.stepper
 
 import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -42,7 +41,41 @@ import com.developerstring.jetco.ui.components.stepper.model.StepperConfig
 import com.developerstring.jetco.ui.components.stepper.model.StepperNode
 import com.developerstring.jetco.ui.components.stepper.model.StepperStatus
 
-// Vertical Stepper Component
+/**
+ * A customizable vertical stepper component built with Jetpack Compose.
+ *
+ * The [VerticalStepper] arranges a list of steps vertically, each step represented by a node and connector line between them.
+ * Steps can show a title, description, and status (Idle, Active, Complete, or Error).
+ *
+ * ### Features
+ * - Supports **animations** for node and connector line drawing.
+ * - Allows **custom icons** for Active, Completed, and Error states via [StepperActionIcons].
+ * - **Customizable styling** via [StepperConfig] (colors, shape, spacing, typography, path effects, etc.).
+ * - Each step is clickable with [onStepClick] callback.
+ * - Can be scrollable or fixed using [scrollEnable].
+ *
+ * ### Example Usage
+ * ```kotlin
+ * val steps = listOf(
+ *     StepperNode("Account Created", "Your account has been created", status = StepperStatus.COMPLETE),
+ *     StepperNode("Profile Setup", "Fill in your profile details", status = StepperStatus.ACTIVE),
+ *     StepperNode("Verification", "Pending verification", status = StepperStatus.IDLE),
+ * )
+ *
+ * VerticalStepper(
+ *     steps = steps,
+ *     style = StepperConfig(),
+ *     onStepClick = { index -> println("Step $index clicked") }
+ * )
+ * ```
+ *
+ * @param steps List of [StepperNode] representing the steps in the vertical flow.
+ * @param modifier Modifier to be applied to the stepper layout.
+ * @param style Customization options for the stepper look & feel via [StepperConfig].
+ * @param stepperActionIcons Icons to display for different step states (active, completed, error).
+ * @param scrollEnable Whether the stepper should allow vertical scrolling if content exceeds bounds.
+ * @param onStepClick Callback invoked with the step index when a step is clicked. Can be `null` if not needed.
+ */
 @Composable
 fun VerticalStepper(
     steps: List<StepperNode>,
@@ -59,7 +92,7 @@ fun VerticalStepper(
 
     val animatedProgress by animateFloatAsState(
         targetValue = if (animationTriggered) 1f else 0f,
-        animationSpec = tween(style.animation.durationMillis),
+        animationSpec = style.animation.animationSpec,
         label = "node_animation"
     )
 
@@ -118,6 +151,7 @@ private fun VerticalStepItem(
                 .width(style.node.size)
                 .fillMaxHeight()
         ) {
+
             // Node
             Card(
                 modifier = Modifier

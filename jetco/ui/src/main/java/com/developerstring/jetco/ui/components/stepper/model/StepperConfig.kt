@@ -1,5 +1,7 @@
 package com.developerstring.jetco.ui.components.stepper.model
 
+import androidx.compose.animation.core.AnimationSpec
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.graphics.Color
@@ -102,10 +104,12 @@ data class StepperConfig(
      *
      * @property enabled Whether animations are enabled.
      * @property durationMillis Duration of node/connector animations in milliseconds.
+     * @property animationSpec The animation specification to use (default: tween with [durationMillis]).
      */
     data class AnimationConfig(
         val enabled: Boolean = true,
-        val durationMillis: Int = 1200
+        val durationMillis: Int = 1200,
+        val animationSpec: AnimationSpec<Float> = tween(durationMillis)
     )
 
     /**
