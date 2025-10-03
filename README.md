@@ -14,13 +14,16 @@ View the full Documentation of <a href="https://jetco.developerstring.com" targe
 
 JetCo offers a growing lineup of UI components that make your apps stand out:
 
-| 🧁 Component                  | 🍭 Description                                                                      |
-| ----------------------------- | ----------------------------------------------------------------------------------- |
-| **Pie Chart**                 | Slice and dice your data into a tasty pie chart format. 🥧                          |
-| **Column Bar Chart**          | Perfect for showing data as bars with full customization. 📊                        |
-| **Extended Column Bar Chart** | Take your bar charts to the next level with advanced features. 🔥                   |
-| **Group Column Bar Chart**    | Compare multiple data sets side by side. 🤓                                         |
-| **TicketCard**                | Custom ticket-style card with cutout arcs, dashed dividers, and flexible slots. 🎟️ |
+| 🧁 Component                  | 🍭 Description                                                                                 |
+| ----------------------------- | -------------------------------------------------------------------------------------------- |
+| **Pie Chart**                 | Slice and dice your data into a tasty pie chart format. 🥧                                   |
+| **Column Bar Chart**          | Perfect for showing data as bars with full customization. 📊                                 |
+| **Extended Column Bar Chart** | Take your bar charts to the next level with advanced features. 🔥                            |
+| **Group Column Bar Chart**    | Compare multiple data sets side by side. 🤓                                                  |
+| **TicketCard**                | Custom ticket-style card with cutout arcs, dashed dividers, and flexible slots. 🎟️          |
+| **VerticalStepper**           | A vertical timeline/stepper with titles, descriptions, and optional images in each node. ⬇️ |
+| **HorizontalStepper**         | A clean and simple horizontal stepper for progress or timeline representation. ➡️           |
+| **CompactHorizontalStepper**  | A minimal, icon-only horizontal stepper for compact UIs (great for mobile). ⚡               |
 
 ---
 
@@ -46,9 +49,17 @@ Check out the examples below to see JetCo in action!
     </td>
   </tr>
   <tr>
-    <td colspan="4" align="center">
-      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/ticket_card.png?raw=true" alt="Description 5" width="250"/>
+    <td>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/ticket_card.png?raw=true" alt="Description 5" width="750"/>
       <p>Ticket Card</p>
+    </td>
+    <td>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/vertical-stepper.png?raw=true" alt="Description 6" width="750"/>
+      <p>Vertical Stepper</p>
+    </td>
+    <td>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/horizontal-stepper.png?raw=true" alt="Description 7" width="750"/>
+      <p>Horizontal Stepper & CompactHorizontalStepper</p>
     </td>
   </tr>
 </table>
