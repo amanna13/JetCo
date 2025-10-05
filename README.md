@@ -63,7 +63,7 @@ Check out the examples below to see JetCo in action!
       <p>Horizontal Stepper & CompactHorizontalStepper</p>
     </td>
     <td>
-      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/switch_button.gif?raw=true" alt="Description 8" width="750"/>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/switch_button.gif?raw=true" alt="Description 8" width="180"/>
       <p>SwitchButton</p>
     </td>
   </tr>
