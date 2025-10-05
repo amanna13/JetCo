@@ -24,7 +24,8 @@ JetCo offers a growing lineup of UI components that make your apps stand out:
 | **VerticalStepper**           | A vertical timeline/stepper with titles, descriptions, and optional images in each node. ⬇️ |
 | **HorizontalStepper**         | A clean and simple horizontal stepper for progress or timeline representation. ➡️           |
 | **CompactHorizontalStepper**  | A minimal, icon-only horizontal stepper for compact UIs (great for mobile). ⚡               |
-
+| **SwitchButton**              | A customizable and animated switch button composable. 🔘                                      |
+  
 ---
 
 Check out the examples below to see JetCo in action!
@@ -60,6 +61,10 @@ Check out the examples below to see JetCo in action!
     <td>
       <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/horizontal-stepper.png?raw=true" alt="Description 7" width="750"/>
       <p>Horizontal Stepper & CompactHorizontalStepper</p>
+    </td>
+    <td>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/switch_button.gif?raw=true" alt="Description 8" width="750"/>
+      <p>SwitchButton</p>
     </td>
   </tr>
 </table>
