@@ -25,8 +25,8 @@ ext {
 
     library = [
             groupId        : "com.developerstring.jetco",
-            version_name   : "1.0.0-beta.5",
-            version_code   : 5,
+            version_name   : "1.0.0-beta.6",
+            version_code   : 6,
             target_sdk     : 36,
             min_sdk        : 21,
             compose_min_sdk: 21,
