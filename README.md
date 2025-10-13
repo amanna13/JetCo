@@ -155,7 +155,7 @@ graph TB
       <br/><sub>Timeline progression</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/HorizontalStepper.png?raw=true" alt="Horizontal Stepper" width="280" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/HorizontalStepper.png?raw=true" alt="Horizontal Stepper" width="200" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
       <br/><strong>➡️ Horizontal Stepper</strong>
       <br/><sub>Step-by-step progress</sub>
     </td>
