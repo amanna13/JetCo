@@ -155,9 +155,9 @@ graph TB
       <br/><sub>Timeline progression</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/horizontal-stepper.png?raw=true" alt="Horizontal Stepper" width="280" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/HorizontalStepper.png?raw=true" alt="Horizontal Stepper" width="280" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
       <br/><strong>➡️ Horizontal Stepper</strong>
-      <br/><sub>Progress visualization</sub>
+      <br/><sub>Step-by-step progress</sub>
     </td>
     <td align="center">
       <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/switch_button.gif?raw=true" alt="Switch Button" width="150" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
@@ -166,6 +166,11 @@ graph TB
     </td>
   </tr>
   <tr>
+    <td align="center">
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/CompactHorizontalStepper.png?raw=true" alt="Compact Horizontal Stepper" width="280" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+      <br/><strong>📏 Compact Horizontal Stepper</strong>
+      <br/><sub>Space-efficient progress</sub>
+    </td>
     <td align="center">
       <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/curvedCard-1.png?raw=true" alt="Curved Card" width="280" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
       <br/><strong>🃏 Curved Card</strong>
@@ -176,7 +181,7 @@ graph TB
       <br/><strong>🎨 Curved Card</strong>
       <br/><sub>Creative card layouts</sub>
     </td>
-    <td align="center" colspan="2">
+    <td align="center">
       <!-- Placeholder for future components -->
     </td>
   </tr>
