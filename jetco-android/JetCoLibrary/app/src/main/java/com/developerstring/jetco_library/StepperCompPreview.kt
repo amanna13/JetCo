@@ -1,6 +1,7 @@
 package com.developerstring.jetco_library
 
 import android.widget.Toast
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,7 @@ import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -44,29 +46,85 @@ fun StepperCompPreview() {
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(top = 50.dp)
+            .fillMaxSize().padding(horizontal = 30.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        val steps = listOf(
-            StepperNode(
-                "Order Placed",
-                "Your order is confirmed",
-                Icons.Default.CheckCircle,
-            ),
-            StepperNode("Processing", "Preparing your order", Icons.Default.Build),
-            StepperNode("Shipped", "On the way to you", Icons.Default.Done),
-            StepperNode("Delivered", "Successfully delivered", Icons.Default.Home)
-        )
+//        val steps = listOf(
+//            StepperNode(
+//                "Order Placed",
+//                "Your order is confirmed",
+//                Icons.Default.CheckCircle,
+//            ),
+//            StepperNode("Processing", "Preparing your order", Icons.Default.Build),
+//            StepperNode("Shipped", "On the way to you", Icons.Default.Done),
+//            StepperNode("Delivered", "Successfully delivered", Icons.Default.Home)
+//        )
+//
+//        VerticalStepper(
+//            steps = steps,
+//            onStepClick = { index -> /* Handle navigation */ },
+//        )
+//
+//        HorizontalStepper(
+//            steps,
+//
+//            )
+//    }
 
-        VerticalStepper(
-            steps = steps,
-            onStepClick = { index -> /* Handle navigation */ },
+    val sampleSteps = listOf(
+        StepperNode(
+            title = "Order Placed",
+            description = "Your order has been successfully placed",
+            icon = Icons.Rounded.ShoppingCart,
+            status = StepperStatus.COMPLETE,
+            painter = painterResource(R.drawable.img)
+        ),
+        StepperNode(
+            title = "Processing",
+            description = "We're preparing your order",
+            icon = Icons.Rounded.DateRange,
+            status = StepperStatus.COMPLETE
+        ),
+        StepperNode(
+            title = "Shipped\nIt may take a while to reach you",
+            description = "Your order is on the way! \nWould love to have some patience! \nThank you.",
+            icon = Icons.Rounded.AccountCircle,
+            status = StepperStatus.ERROR
+        ),
+        StepperNode(
+            title = "Shipped once again!",
+            description = "Your order is on the way! Sorry for the issue in previous shipping attempt.",
+            icon = Icons.Rounded.AccountCircle,
+            status = StepperStatus.ACTIVE
+        ),
+        StepperNode(
+            title = "Delivered",
+            description = "Order delivered successfully",
+            icon = Icons.Rounded.ShoppingCart,
+            status = StepperStatus.IDLE
         )
+    )
 
         HorizontalStepper(
-            steps,
-
+            steps = sampleSteps,
+            style = StepperConfig(
+                textConfig = StepperConfig.TextStyleConfig(
+                    titleTextStyle = TextStyle(
+                        textAlign = TextAlign.Center,
+                    )
+                ),
+//                    titleTextStyle = TextStyle(
+//                        textAlign = TextAlign.Center
+//                    ),
+//                    activeColor = Color(0xFF7FC4E5)
+            ),
+            stepperActionIcons = StepperActionIcons(
+                completed = Icons.Filled.FavoriteBorder,
+                error = Icons.Filled.Info,
+                active = Icons.Rounded.Notifications
             )
+        )
     }
 
 }

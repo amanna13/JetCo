@@ -16,6 +16,7 @@ kotlin = "2.2.20"
 kotlinx-coroutines = "1.10.2"
 
 materialIconsExtended = "1.7.3"
+ui = "1.0.0-beta.8"
 vanniktechMavenPublish = "0.34.0"
 
 [libraries]
@@ -31,6 +32,7 @@ androidx-lifecycle-viewmodelCompose = { module = "org.jetbrains.androidx.lifecyc
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 kotlinx-coroutinesSwing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
+ui = { module = "com.developerstring.jetco-kmp:ui", version.ref = "ui" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

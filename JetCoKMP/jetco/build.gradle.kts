@@ -20,7 +20,11 @@ kotlin {
     }
 
     js {
-        browser()
+        browser {
+            testTask {
+                enabled = false
+            }
+        }
         binaries.executable()
     }
 
@@ -43,6 +47,9 @@ kotlin {
     @OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
     wasmJs {
         browser {
+            testTask {
+                enabled = false
+            }
             commonWebpackConfig {
                 outputFileName = "jetco.js"
             }
@@ -127,7 +134,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates("package", "artifact", "version")
+    coordinates("com.developerstring.jetco-kmp", "ui", "1.0.0-beta.8")
 
     pom {
         name = "JetCo"
@@ -149,9 +156,9 @@ mavenPublishing {
             }
         }
         scm {
-            url = "repo"
-            connection = "scm:git:git://repo.git"
-            developerConnection = "scm:git:ssh://git@repo.git"
+            url = "https://github.com/developerchunk/jetco/"
+            connection = "scm:git:git://github.com/developerchunk/jetco.git"
+            developerConnection = "scm:git:ssh://git@github.com/developerchunk/jetco.git"
         }
 
         withXml {

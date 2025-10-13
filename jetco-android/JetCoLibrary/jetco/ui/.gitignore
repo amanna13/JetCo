@@ -1,3 +1,10 @@
 /build
 /.gradle
 gradle.properties
+
+# UI Library sensitive files
+local.properties
+*.keystore
+*.jks
+*.key
+*.p12

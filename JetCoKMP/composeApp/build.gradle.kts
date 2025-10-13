@@ -16,6 +16,11 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
+
+    js {
+        browser()
+        binaries.executable()
+    }
     
      listOf(
          iosArm64(),
@@ -58,7 +63,8 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation("org.jetbrains.compose.material:material-icons-extended:1.7.3")
-            implementation(project(":jetco"))
+//            implementation(project(":jetco"))
+            implementation(libs.ui)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

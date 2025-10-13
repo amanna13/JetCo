@@ -157,7 +157,7 @@ fun ChartsPreview() {
                         color = Color.White // Set text color
                     )
                 }
-            }
+            },
         )
 
 
