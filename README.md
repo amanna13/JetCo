@@ -133,7 +133,7 @@ graph TB
       <br/><sub>Beautiful data bars</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/3.jpg?raw=true" alt="Extended Column Bar Chart" width="280" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/3.jpg?raw=true" alt="Extended Column Bar Chart" width="200" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
       <br/><strong>🔥 Extended Bar Chart</strong>
       <br/><sub>Advanced features</sub>
     </td>
