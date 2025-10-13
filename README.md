@@ -177,7 +177,7 @@ graph TB
       <br/><sub>Elegant curved corners</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/curvedCard-2.gif?raw=true" alt="Curved Card" width="280" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+      <img src="https://github.com/developerchunk/JetCo/blob/main/assets/images/curvedCard-2.gif?raw=true" alt="Curved Card" width="200" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
       <br/><strong>🎨 Curved Card</strong>
       <br/><sub>Creative card layouts</sub>
     </td>
