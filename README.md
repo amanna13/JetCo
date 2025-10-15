@@ -33,7 +33,7 @@ Your ultimate **Open-Source** partner for crafting visually stunning, interactiv
 
 <p align="center">
   <a href="https://jetco.developerstring.com" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/📖_Android_Documentation-4CAF50?style=for-the-badge&logoColor=white" alt="Android Documentation">
+    <img src="https://img.shields.io/badge/📖_Documentation-4CAF50?style=for-the-badge&logoColor=white" alt="Documentation">
   </a>
   <a href="https://github.com/developerchunk/JetCo" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/⭐_Star_on_GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Star on GitHub">
