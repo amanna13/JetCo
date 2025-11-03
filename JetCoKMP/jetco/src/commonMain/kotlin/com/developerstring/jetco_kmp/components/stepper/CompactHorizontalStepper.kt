@@ -93,8 +93,7 @@ fun CompactHorizontalStepper(
         // Trigger animation on composition
         animationTriggered = true
     }
-
-
+    
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -126,40 +125,40 @@ fun CompactHorizontalStepper(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    if (isCompleted || index == currentStep-1 || isError) {
-                        if (isError) {
-                            Icon(
-                                imageVector = stepperActionIcons.error,
-                                contentDescription = prefix + "error",
-                                tint = style.node.actionIconColor,
-                                modifier = Modifier.size(12.dp)
-                            )
-                        } else {
-                            Icon(
-                                imageVector = stepperActionIcons.completed,
-                                contentDescription = prefix + "completed",
-                                tint = style.node.actionIconColor,
-                                modifier = Modifier.size(12.dp)
-                            )
-                        }
-                    } else {
-                        val contentDescription = prefix + "idle"
-                        if (step.icon!= null) {
-                            Icon(
-                                imageVector = step.icon,
-                                contentDescription = contentDescription,
-                                tint = style.node.idleIconColor,
-                                modifier = Modifier.size(12.dp)
-                            )
-                        } else {
-                            Icon(
-                                imageVector = stepperActionIcons.active,
-                                contentDescription = contentDescription,
-                                tint = style.node.idleIconColor,
-                                modifier = Modifier.size(12.dp)
-                            )
-                        }
+                    val (iconVector, iconTint, iconDescription) = when {
+                        isError -> Triple(
+                            stepperActionIcons.error,
+                            style.node.actionIconColor,
+                            prefix + "error"
+                        )
+                        isCompleted || index == currentStep - 1 -> Triple(
+                            stepperActionIcons.completed,
+                            style.node.actionIconColor,
+                            prefix + "completed"
+                        )
+                        isActive && step.icon != null -> Triple(
+                            step.icon,
+                            style.node.actionIconColor,
+                            prefix + "active"
+                        )
+                        step.icon != null -> Triple(
+                            step.icon,
+                            style.node.idleIconColor,
+                            prefix + "idle"
+                        )
+                        else -> Triple(
+                            stepperActionIcons.active,
+                            style.node.idleIconColor,
+                            prefix + "idle"
+                        )
                     }
+
+                    Icon(
+                        imageVector = iconVector,
+                        contentDescription = iconDescription,
+                        tint = iconTint,
+                        modifier = Modifier.size(12.dp)
+                    )
                 }
             }
 
