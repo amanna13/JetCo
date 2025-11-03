@@ -24,11 +24,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.unit.dp
 import com.developerstring.jetco_kmp.components.stepper.model.StepperActionIcons
 import com.developerstring.jetco_kmp.components.stepper.model.StepperConfig
 import com.developerstring.jetco_kmp.components.stepper.model.StepperNode
+import com.developerstring.jetco_kmp.components.stepper.model.StepperStatus
 
 /**
  * A compact horizontal stepper component for Jetpack Compose.
@@ -100,10 +102,12 @@ fun CompactHorizontalStepper(
         verticalAlignment = Alignment.CenterVertically
     ) {
         steps.forEachIndexed { index, step ->
-            val isActive = index == currentStep - 1
-            val isCompleted = index < currentStep-1
+            val isActive = index == currentStep
+            val isCompleted = index < currentStep
+            val isError = step.status == StepperStatus.ERROR
 
             val nodeColor = when {
+                isError -> style.node.errorColor
                 isCompleted -> style.node.completedColor
                 isActive -> style.node.activeColor
                 else -> style.node.inactiveColor
@@ -117,29 +121,40 @@ fun CompactHorizontalStepper(
                 colors = CardDefaults.cardColors(containerColor = nodeColor),
                 onClick = { onStepClick?.invoke(index) }
             ) {
+                val prefix = "${index}_step_"
                 Box(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    if (isCompleted || index == currentStep-1) {
-                        Icon(
-                            imageVector = stepperActionIcons.completed,
-                            contentDescription = "Completed",
-                            tint = style.node.actionIconColor,
-                            modifier = Modifier.size(12.dp)
-                        )
+                    if (isCompleted || index == currentStep-1 || isError) {
+                        if (isError) {
+                            Icon(
+                                imageVector = stepperActionIcons.error,
+                                contentDescription = prefix + "error",
+                                tint = style.node.actionIconColor,
+                                modifier = Modifier.size(12.dp)
+                            )
+                        } else {
+                            Icon(
+                                imageVector = stepperActionIcons.completed,
+                                contentDescription = prefix + "completed",
+                                tint = style.node.actionIconColor,
+                                modifier = Modifier.size(12.dp)
+                            )
+                        }
                     } else {
+                        val contentDescription = prefix + "idle"
                         if (step.icon!= null) {
                             Icon(
                                 imageVector = step.icon,
-                                contentDescription = "Completed",
+                                contentDescription = contentDescription,
                                 tint = style.node.idleIconColor,
                                 modifier = Modifier.size(12.dp)
                             )
                         } else {
                             Icon(
                                 imageVector = stepperActionIcons.active,
-                                contentDescription = "Completed",
+                                contentDescription = contentDescription,
                                 tint = style.node.idleIconColor,
                                 modifier = Modifier.size(12.dp)
                             )
