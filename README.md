@@ -182,7 +182,9 @@ graph TB
       <br/><sub>Creative card layouts</sub>
     </td>
     <td align="center">
-      <!-- Placeholder for future components -->
+      <img src="https://github.com/amanna13/JetCo/blob/feature/animated-search-bar-component/assets/images/AnimatedSearchBar.gif" width="280" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+       <br/><strong>🔍 Animated Search Bar</strong>
+      <br/><sub>Customized Animated Search Bar</sub>
     </td>
   </tr>
 </table>
@@ -411,6 +413,9 @@ kotlin {
 | **🔘 Switch Button** | Animated toggle switch with custom styling | ![All Platforms](https://img.shields.io/badge/All-Platforms-success) | ✅ |
 
 </div>
+
+> [!NOTE]
+> Animated Search Bar is now available for Android. KMP support coming soon!
 
 > 🚧 **Coming Soon:** Date Pickers, Floating Action Buttons, Bottom Sheets, and more!
   
