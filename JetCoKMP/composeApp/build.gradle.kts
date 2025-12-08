@@ -62,9 +62,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation("org.jetbrains.compose.material:material-icons-extended:1.7.3")
-//            implementation(project(":jetco"))
-            implementation(libs.ui)
+            implementation(libs.material.icons.extended)
+            implementation(project(":jetco"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -104,6 +103,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":jetco"))
     debugImplementation(compose.uiTooling)
 }
 
